@@ -1,0 +1,9 @@
+:root{--titlebar-height:32px;scrollbar-color:#33434f #0a0f13;scrollbar-width:thin}
+html,body,#root{height:100%;overflow:hidden}
+*::-webkit-scrollbar{width:8px;height:8px}*::-webkit-scrollbar-track{background:#0a0f13;border-left:1px solid rgba(255,255,255,.025)}*::-webkit-scrollbar-thumb{background:#2b3944;border:2px solid #0a0f13;border-radius:3px}*::-webkit-scrollbar-thumb:hover{background:#40515e}*::-webkit-scrollbar-corner{background:#0a0f13}
+.app{height:100%;overflow:hidden;padding-top:var(--titlebar-height)}
+.window-titlebar{position:fixed;inset:0 0 auto 0;height:var(--titlebar-height);z-index:300;background:#070b0e;border-bottom:1px solid #202a33;display:flex;align-items:center;justify-content:space-between;user-select:none}
+.window-title{height:100%;display:flex;align-items:center;gap:7px;padding-left:9px;color:#71808d;font-size:9px;letter-spacing:.025em;flex:1}.window-title>svg{color:#38bdf8}.window-clock-label{font:8px "Cascadia Code",Consolas,monospace;letter-spacing:.08em;color:#566b7a}.window-title code{margin-left:4px;padding-left:9px;border-left:1px solid #202a33;font:8px "Cascadia Code",Consolas,monospace;letter-spacing:.07em;color:#50616f}
+.window-controls{height:100%;display:flex}.window-controls button{width:44px;height:100%;border:0;background:transparent;color:#71808d;display:grid;place-items:center;cursor:pointer}.window-controls button:hover{background:#12181e;color:#f3f6f8}.window-controls .window-close:hover{background:#9f3944;color:#fff}
+.sidebar{top:var(--titlebar-height)}.workspace{height:calc(100vh - var(--titlebar-height));overflow:auto;min-height:0}.topbar{top:0}.drawer-wrap,.modal-wrap{top:var(--titlebar-height)}
+@media(max-width:850px){.mobile-menu{top:calc(var(--titlebar-height) + 12px)}}

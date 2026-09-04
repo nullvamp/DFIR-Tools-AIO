@@ -1,0 +1,28 @@
+import { Box,ExternalLink,FolderOpen,Terminal } from 'lucide-react';
+import type { Tool } from '../../types/tool';
+import hindsight from '../../assets/tool-icons/hindsight.png';
+import hayabusa from '../../assets/tool-icons/hayabusa-emblem.png';
+import autopsy from '../../assets/tool-icons/autopsy.ico';
+import ghidra from '../../assets/tool-icons/ghidra.ico';
+import volatility from '../../assets/tool-icons/volatility.ico';
+import memprocfs from '../../assets/tool-icons/memprocfs.ico';
+import wireshark from '../../assets/tool-icons/wireshark.svg';
+import yara from '../../assets/tool-icons/yara.svg';
+import cyberchef from '../../assets/tool-icons/cyberchef.svg';
+import kape from '../../assets/tool-icons/kape.png';
+import chainsaw from '../../assets/tool-icons/chainsaw.png';
+import winpmem from '../../assets/tool-icons/winpmem.png';
+import uac from '../../assets/tool-icons/uac.svg';
+import timelineExplorer from '../../assets/tool-icons/timeline-explorer.png';
+import capa from '../../assets/tool-icons/capa.png';
+import floss from '../../assets/tool-icons/floss.png';
+import exiftool from '../../assets/tool-icons/exiftool.png';
+import plaso from '../../assets/tool-icons/plaso.svg';
+import yaraX from '../../assets/tool-icons/yara-x.png';
+import sigcheck from '../../assets/tool-icons/sigcheck.png';
+import thorLite from '../../assets/tool-icons/thor-lite.png';
+import zircolite from '../../assets/tool-icons/zircolite.svg';
+import aptHunter from '../../assets/tool-icons/apt-hunter.png';
+const branded:Record<string,string>={kape,chainsaw,winpmem,uac,'browser-history':hindsight,'timeline-explorer':timelineExplorer,hayabusa,autopsy,ghidra,volatility3:volatility,memprocfs,wireshark,yara,'yara-x':yaraX,sigcheck,'thor-lite':thorLite,zircolite,'apt-hunter':aptHunter,cyberchef,capa,floss,exiftool,plaso};
+const generic:Record<string,typeof Box>={cli:Terminal,python:Terminal,powershell:Terminal,bash:Terminal,web:ExternalLink,folder:FolderOpen};
+export function ToolIcon({tool,size=20}:{tool:Tool;size?:number}){const source=branded[tool.id];if(source)return <img className={`tool-brand-image tool-brand-${tool.id}`} src={source} alt="" aria-hidden="true"/>;const Icon=generic[tool.type]||Box;return <Icon size={size}/>}

@@ -1,0 +1,248 @@
+# Trusted registry. The backend loads and validates these definitions.
+tools:
+  - id: kape
+    name: KAPE
+    category: Windows Forensics
+    subcategory: Collection
+    type: application
+    executable: "${DFIR_TOOLS}\\Collection\\KAPE\\kape.exe"
+    description: Rapid Windows forensic collection and processing
+    requires_admin: true
+    enabled: true
+    arguments: []
+  - id: hayabusa
+    name: Hayabusa
+    category: Windows Forensics
+    subcategory: Event Logs
+    type: cli
+    executable: "${DFIR_TOOLS}\\Windows\\Hayabusa\\hayabusa-4.0.0-win-x64.exe"
+    description: Fast Windows event log timeline and threat detection
+    enabled: true
+    arguments: []
+  - id: cyberchef
+    name: CyberChef
+    category: Utilities
+    type: web
+    executable: "${DFIR_TOOLS}\\Utilities\\CyberChef\\CyberChef_v11.4.0.html"
+    description: Offline local build for decoding and inspecting technical data safely
+    enabled: true
+  - id: chainsaw
+    name: Chainsaw
+    category: Windows Forensics
+    type: cli
+    executable: "${DFIR_TOOLS}\\Windows\\Chainsaw\\chainsaw\\chainsaw.exe"
+    description: Rapid Windows event log hunting
+    enabled: true
+    arguments: []
+  - id: winpmem
+    name: WinPmem
+    category: Memory Forensics
+    type: cli
+    executable: "${DFIR_TOOLS}\\Memory\\WinPmem\\winpmem_mini_x64_rc2.exe"
+    description: Physical memory acquisition
+    requires_admin: true
+    enabled: true
+    arguments: ["--help"]
+  - id: volatility3
+    name: Volatility 3
+    category: Memory Forensics
+    type: cli
+    executable: "${DFIR_TOOLS}\\Memory\\Volatility3\\Scripts\\vol.exe"
+    description: Memory artifact analysis framework
+    enabled: true
+    arguments: ["-h"]
+  - id: memprocfs
+    name: MemProcFS
+    category: Memory Forensics
+    type: cli
+    executable: "${DFIR_TOOLS}\\Memory\\MemProcFS\\MemProcFS.exe"
+    description: Memory analysis virtual filesystem
+    enabled: true
+    arguments: ["-help"]
+  - id: autopsy
+    name: Autopsy
+    category: Disk Forensics
+    type: application
+    executable: "C:\\Program Files\\Autopsy-4.23.1\\bin\\autopsy64.exe"
+    description: Disk image and filesystem analysis
+    enabled: true
+    arguments: []
+  - id: wireshark
+    name: Wireshark
+    category: Network Forensics
+    type: application
+    executable: "C:\\Program Files\\Wireshark\\Wireshark.exe"
+    description: Packet and protocol analysis
+    enabled: true
+    arguments: []
+  - id: ghidra
+    name: Ghidra
+    category: Malware Analysis
+    type: application
+    executable: "${DFIR_TOOLS}\\Malware\\Ghidra\\ghidra_12.1.3_PUBLIC\\ghidraRun.bat"
+    description: Reverse engineering framework
+    enabled: true
+    arguments: []
+  - id: yara
+    name: YARA
+    category: Threat Hunting
+    type: cli
+    executable: "${DFIR_TOOLS}\\ThreatHunting\\YARA\\4.5.5\\yara64.exe"
+    description: Rule-based file matching
+    enabled: true
+    arguments: ["--help"]
+  - id: yara-x
+    name: YARA-X
+    category: Threat Hunting
+    type: cli
+    executable: "${DFIR_TOOLS}\\ThreatHunting\\YARA-X\\1.20.0\\yr.exe"
+    description: Scan collected files with modern YARA rules
+    enabled: true
+    arguments: ["--help"]
+  - id: sigcheck
+    name: Sigcheck
+    category: Threat Hunting
+    type: cli
+    executable: "${DFIR_TOOLS}\\ThreatHunting\\Sigcheck\\2.91\\sigcheck64.exe"
+    description: Inspect signatures, hashes, and metadata in collected files
+    enabled: true
+    arguments: ["-accepteula", "-?"]
+  - id: thor-lite
+    name: THOR Lite
+    category: Threat Hunting
+    type: cli
+    executable: "${DFIR_TOOLS}\\ThreatHunting\\THOR-Lite\\10.7.30\\thor64-lite.exe"
+    description: Run IOC and YARA-based scans against collected evidence
+    requires_admin: true
+    enabled: true
+    arguments: ["--help"]
+  - id: zircolite
+    name: Zircolite
+    category: Threat Hunting
+    type: cli
+    executable: "${DFIR_TOOLS}\\ThreatHunting\\Zircolite\\3.8.1\\zircolite.cmd"
+    description: Apply Sigma rules to collected EVTX and structured logs
+    enabled: true
+    arguments: ["--help"]
+  - id: apt-hunter
+    name: APT-Hunter
+    category: Threat Hunting
+    type: cli
+    executable: "${DFIR_TOOLS}\\ThreatHunting\\APT-Hunter\\3.3.1\\APT-Hunter.exe"
+    description: Hunt for attack activity in collected Windows event logs
+    enabled: true
+    arguments: ["-h"]
+  - id: browser-history
+    name: Hindsight
+    category: Browser Forensics
+    type: cli
+    executable: "${DFIR_TOOLS}\\Browser\\Hindsight\\Scripts\\python.exe"
+    description: Chromium browser artifact analysis
+    enabled: true
+    arguments: ["C:\\DFIR\\Tools\\Browser\\Hindsight\\Scripts\\hindsight.py", "--help"]
+  - id: ftk-imager
+    name: FTK Imager
+    category: Windows Forensics
+    subcategory: Collection
+    type: application
+    executable: "${DFIR_TOOLS}\\Collection\\FTK Imager\\FTK Imager.exe"
+    description: Forensic acquisition and evidence preview
+    requires_admin: true
+    enabled: true
+    arguments: []
+  - id: evtxecmd
+    name: EvtxECmd
+    category: Windows Forensics
+    type: cli
+    executable: "${DFIR_TOOLS}\\Windows\\Zimmerman\\net9\\EvtxeCmd\\EvtxECmd.exe"
+    description: Windows event log parser
+    enabled: true
+    arguments: ["-h"]
+  - id: timeline-explorer
+    name: Timeline Explorer
+    category: Timeline
+    type: portable
+    executable: "${DFIR_TOOLS}\\Windows\\Zimmerman\\net9\\TimelineExplorer\\TimelineExplorer.exe"
+    description: Forensic timeline review
+    enabled: true
+    arguments: []
+  - { id: amcache-parser, name: AmcacheParser, category: Windows Forensics, type: cli, executable: "${DFIR_TOOLS}\\Windows\\Zimmerman\\net9\\AmcacheParser.exe", description: Parse Windows Amcache artifacts, enabled: true, arguments: ["-h"] }
+  - { id: appcompatcache-parser, name: AppCompatCacheParser, category: Windows Forensics, type: cli, executable: "${DFIR_TOOLS}\\Windows\\Zimmerman\\net9\\AppCompatCacheParser.exe", description: Parse Windows Shimcache artifacts, enabled: true, arguments: ["-h"] }
+  - { id: bstrings, name: bstrings, category: Windows Forensics, type: cli, executable: "${DFIR_TOOLS}\\Windows\\Zimmerman\\net9\\bstrings.exe", description: Extract strings with Windows-aware filtering, enabled: true, arguments: ["-h"] }
+  - { id: ezviewer, name: EZViewer, category: Windows Forensics, type: portable, executable: "${DFIR_TOOLS}\\Windows\\Zimmerman\\net9\\EZViewer\\EZViewer.exe", description: Review structured Zimmerman tool output, enabled: true, arguments: [] }
+  - { id: iis-geolocate, name: iisGeolocate, category: Windows Forensics, type: portable, executable: "${DFIR_TOOLS}\\Windows\\Zimmerman\\net9\\iisGeolocate\\iisGeolocate.exe", description: Enrich IIS logs with geolocation data, enabled: true, arguments: [] }
+  - { id: jlecmd, name: JLECmd, category: Windows Forensics, type: cli, executable: "${DFIR_TOOLS}\\Windows\\Zimmerman\\net9\\JLECmd.exe", description: Parse automatic and custom Jump Lists, enabled: true, arguments: ["-h"] }
+  - { id: jump-list-explorer, name: Jump List Explorer, category: Windows Forensics, type: portable, executable: "${DFIR_TOOLS}\\Windows\\Zimmerman\\net9\\JumpListExplorer\\JumpListExplorer.exe", description: Review Windows Jump List artifacts, enabled: true, arguments: [] }
+  - { id: lecmd, name: LECmd, category: Windows Forensics, type: cli, executable: "${DFIR_TOOLS}\\Windows\\Zimmerman\\net9\\LECmd.exe", description: Parse Windows shortcut LNK files, enabled: true, arguments: ["-h"] }
+  - { id: mftecmd, name: MFTECmd, category: Disk Forensics, type: cli, executable: "${DFIR_TOOLS}\\Windows\\Zimmerman\\net9\\MFTECmd.exe", description: Parse NTFS MFT and related metadata, enabled: true, arguments: ["-h"] }
+  - { id: mft-explorer, name: MFT Explorer, category: Disk Forensics, type: portable, executable: "${DFIR_TOOLS}\\Windows\\Zimmerman\\net9\\MFTExplorer\\MFTExplorer.exe", description: Explore NTFS MFT records interactively, enabled: true, arguments: [] }
+  - { id: pecmd, name: PECmd, category: Windows Forensics, type: cli, executable: "${DFIR_TOOLS}\\Windows\\Zimmerman\\net9\\PECmd.exe", description: Parse Windows Prefetch artifacts, enabled: true, arguments: ["-h"] }
+  - { id: rbcmd, name: RBCmd, category: Windows Forensics, type: cli, executable: "${DFIR_TOOLS}\\Windows\\Zimmerman\\net9\\RBCmd.exe", description: Parse Windows Recycle Bin artifacts, enabled: true, arguments: ["-h"] }
+  - { id: recent-file-cache-parser, name: RecentFileCacheParser, category: Windows Forensics, type: cli, executable: "${DFIR_TOOLS}\\Windows\\Zimmerman\\net9\\RecentFileCacheParser.exe", description: Parse RecentFileCache artifacts, enabled: true, arguments: ["-h"] }
+  - { id: recmd, name: RECmd, category: Windows Forensics, type: cli, executable: "${DFIR_TOOLS}\\Windows\\Zimmerman\\net9\\RECmd\\RECmd.exe", description: Parse Registry hives using reusable batch definitions, enabled: true, arguments: ["-h"] }
+  - { id: registry-explorer, name: Registry Explorer, category: Windows Forensics, type: portable, executable: "${DFIR_TOOLS}\\Windows\\Zimmerman\\net9\\RegistryExplorer\\RegistryExplorer.exe", description: Explore offline Windows Registry hives, enabled: true, arguments: [] }
+  - { id: rla, name: Registry Loading Agent, category: Windows Forensics, type: cli, executable: "${DFIR_TOOLS}\\Windows\\Zimmerman\\net9\\rla.exe", description: Replay transaction logs into Registry hives, enabled: true, arguments: ["-h"] }
+  - { id: sbecmd, name: SBECmd, category: Windows Forensics, type: cli, executable: "${DFIR_TOOLS}\\Windows\\Zimmerman\\net9\\SBECmd.exe", description: Parse ShellBags Explorer export artifacts, enabled: true, arguments: ["-h"] }
+  - { id: sdb-explorer, name: SDB Explorer, category: Windows Forensics, type: portable, executable: "${DFIR_TOOLS}\\Windows\\Zimmerman\\net9\\SDBExplorer\\SDBExplorer.exe", description: Explore Windows application compatibility databases, enabled: true, arguments: [] }
+  - { id: shellbags-explorer, name: ShellBags Explorer, category: Windows Forensics, type: portable, executable: "${DFIR_TOOLS}\\Windows\\Zimmerman\\net9\\ShellBagsExplorer\\ShellBagsExplorer.exe", description: Explore ShellBag artifacts, enabled: true, arguments: [] }
+  - { id: sqlecmd, name: SQLECmd, category: Windows Forensics, type: cli, executable: "${DFIR_TOOLS}\\Windows\\Zimmerman\\net9\\SQLECmd\\SQLECmd.exe", description: Parse SQLite databases using forensic maps, enabled: true, arguments: ["-h"] }
+  - { id: srumecmd, name: SrumECmd, category: Windows Forensics, type: cli, executable: "${DFIR_TOOLS}\\Windows\\Zimmerman\\net9\\SrumECmd.exe", description: Parse Windows SRUM databases, enabled: true, arguments: ["-h"] }
+  - { id: sumecmd, name: SumECmd, category: Windows Forensics, type: cli, executable: "${DFIR_TOOLS}\\Windows\\Zimmerman\\net9\\SumECmd.exe", description: Parse User Access Logging databases, enabled: true, arguments: ["-h"] }
+  - { id: vscmount, name: VSCMount, category: Disk Forensics, type: portable, executable: "${DFIR_TOOLS}\\Windows\\Zimmerman\\net9\\VSCMount.exe", description: Mount Volume Shadow Copies for examination, requires_admin: true, enabled: true, arguments: [] }
+  - { id: wxtcmd, name: WxTCmd, category: Windows Forensics, type: cli, executable: "${DFIR_TOOLS}\\Windows\\Zimmerman\\net9\\WxTCmd.exe", description: Parse Windows Timeline database artifacts, enabled: true, arguments: ["-h"] }
+  - id: oledump
+    name: oledump.py
+    category: Email / Document Analysis
+    subcategory: Office / OLE
+    type: python
+    executable: "${DFIR_TOOLS}\\Documents\\DidierStevensSuite\\oledump.py"
+    description: OLE document stream analysis
+    enabled: true
+    arguments: ["-h"]
+  - { id: rtfdump, name: RTFDump, category: Email / Document Analysis, subcategory: Office / OLE, type: python, executable: "${DFIR_TOOLS}\\Documents\\DidierStevensSuite\\rtfdump.py", description: Inspect RTF structure and embedded objects, enabled: true, arguments: ["-h"] }
+  - { id: pdfid, name: PDFiD, category: Email / Document Analysis, subcategory: PDF, type: python, executable: "${DFIR_TOOLS}\\Documents\\DidierStevensSuite\\pdfid.py", description: Triage suspicious PDF features, enabled: true, arguments: ["-h"] }
+  - { id: pdf-parser, name: pdf-parser.py, category: Email / Document Analysis, subcategory: PDF, type: python, executable: "${DFIR_TOOLS}\\Documents\\DidierStevensSuite\\pdf-parser.py", description: Inspect PDF objects and streams, enabled: true, arguments: ["-h"] }
+  - { id: emldump, name: EMLDump, category: Email / Document Analysis, subcategory: Email, type: python, executable: "${DFIR_TOOLS}\\Documents\\DidierStevensSuite\\emldump.py", description: Inspect MIME parts and email attachments, enabled: true, arguments: ["-h"] }
+  - { id: zipdump, name: ZipDump, category: Email / Document Analysis, subcategory: Archives, type: python, executable: "${DFIR_TOOLS}\\Documents\\DidierStevensSuite\\zipdump.py", description: Inspect ZIP and ZIP-based document formats, enabled: true, arguments: ["-h"] }
+  - { id: jpegdump, name: JPEGDump, category: Email / Document Analysis, subcategory: Images, type: python, executable: "${DFIR_TOOLS}\\Documents\\DidierStevensSuite\\jpegdump.py", description: Inspect JPEG segments and embedded data, enabled: true, arguments: ["-h"] }
+  - { id: base64dump, name: Base64Dump, category: Email / Document Analysis, subcategory: Utilities, type: python, executable: "${DFIR_TOOLS}\\Documents\\DidierStevensSuite\\base64dump.py", description: Find and decode Base64 content, enabled: true, arguments: ["-h"] }
+  - id: uac
+    name: UAC
+    category: Linux Forensics
+    type: bash
+    executable: "${DFIR_TOOLS}\\Linux\\UAC\\uac-3.3.0\\uac"
+    description: Unix-like artifact collection
+    enabled: true
+    arguments: []
+  - id: capa
+    name: capa
+    category: Malware Analysis
+    type: cli
+    executable: "${DFIR_TOOLS}\\Malware\\capa\\9.4.0\\capa.exe"
+    description: Identify executable capabilities and map observed behavior
+    enabled: true
+    arguments: ["--help"]
+  - id: floss
+    name: FLOSS
+    category: Malware Analysis
+    type: cli
+    executable: "${DFIR_TOOLS}\\Malware\\FLOSS\\3.1.1\\floss.exe"
+    description: Extract static and obfuscated strings from executable files
+    enabled: true
+    arguments: ["--help"]
+  - id: exiftool
+    name: ExifTool
+    category: Email / Document Analysis
+    type: cli
+    executable: "${DFIR_TOOLS}\\Utilities\\ExifTool\\13.59\\exiftool-13.59_64\\exiftool.exe"
+    description: Read file metadata across documents, images, media, and archives
+    enabled: true
+    arguments: ["-ver"]
+  - id: plaso
+    name: Plaso
+    category: Timeline
+    type: cli
+    executable: "${DFIR_TOOLS}\\Timeline\\Plaso\\runtime\\Scripts\\log2timeline.exe"
+    description: Build and export forensic super timelines from active case evidence
+    enabled: true
+    arguments: ["--help"]

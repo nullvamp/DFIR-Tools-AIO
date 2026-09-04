@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Zircolite">
+  <rect width="64" height="64" rx="12" fill="#101820"/>
+  <path d="M15 16h35v8L27 44h23v8H14v-8l23-20H15z" fill="#28c7e8"/>
+  <circle cx="50" cy="16" r="5" fill="#7ee787"/>
+</svg>

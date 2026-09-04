@@ -1,0 +1,50 @@
+# Dependencies and generated builds
+node_modules/
+dist/
+src-tauri/target/
+release/
+*.exe
+*.msi
+*.msix
+*.appx
+*.appxbundle
+*.log
+
+# Private development and release notes
+BUILD_SECURITY.md
+SECURITY_REVIEW.md
+
+# Environment files, credentials, and signing material
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.pfx
+*.p12
+*.cer
+*.crt
+*.snk
+
+# Local DFIR tools, cases, evidence, and output
+Tools/
+Cases/
+Case/
+EVIDENCE/
+Evidence/
+OUTPUT/
+Output/
+acquisition-*/
+*.raw
+*.mem
+*.dmp
+*.dd
+*.E01
+*.EWF
+
+# Editor and operating-system files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+Desktop.ini
